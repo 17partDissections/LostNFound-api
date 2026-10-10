@@ -23,6 +23,10 @@ class LoginRequest(BaseModel):
     phone_num: str
     passwd: str
 
+class EditNameRequest(BaseModel):
+    name: str
+    surname: str
+
 @app.get("/users")
 def get():
     connection = get_db()
@@ -55,3 +59,14 @@ def login(credentials: LoginRequest):
     if user is None: return {"status": "login: error", "message": "bitch theres no user w that phone_num"}
     if user['passwd'] == credentials.passwd: return {"status": "login: success"}
     else:return {"status": "login: error", "message": "YO MAMA SOOO FAT"}
+
+@app.put("/users/{user_id}")
+def edit_name(user_id: int, user_data: EditNameRequest):
+    connection = get_db()
+    with connection.cursor() as cursor:
+        sql = "UPDATE users SET name = %s, surname = %s WHERE id = %s"
+        values = (user_data.name, user_data.surname, user_id)
+        cursor.execute(sql, values)
+    connection.commit()
+    connection.close()
+    return {"status": "edit_name: success", "message": f"User {user_id} changed their name to {user_data.name}"}
