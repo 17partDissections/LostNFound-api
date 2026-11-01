@@ -10,6 +10,7 @@
 - **phpMyAdmin**
 - **XAMPP**
 - **Postman**
+- **FileZilla**
 
 ### Библиотеки
 - **pydantic**
