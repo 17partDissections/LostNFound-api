@@ -18,5 +18,5 @@
 
 ### Полезные ссылки
 [Документация](documentation.md)<br>
-[Зависимости](dependencies.md)<br>
+[Зависимости](dependencies.txt)<br>
 [Стек](stack_LostNFound-api.md)<br>
