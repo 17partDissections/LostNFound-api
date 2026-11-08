@@ -47,7 +47,7 @@ source .venv/bin/activate
 Установи зависимости:
 
 ```bash
-pip install -r dependencies.md
+pip install -r dependencies.txt
 ```
 
 ## Настройка
