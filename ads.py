@@ -1,5 +1,5 @@
 from fastapi import APIRouter, UploadFile, File, Form
-from main import get_db
+from db import get_db
 import shutil
 
 router = APIRouter()

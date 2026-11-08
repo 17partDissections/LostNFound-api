@@ -1,7 +1,7 @@
 
 from fastapi import *
 from pydantic import BaseModel
-from main import get_db
+from db import get_db
 import os
 
 router = APIRouter()
